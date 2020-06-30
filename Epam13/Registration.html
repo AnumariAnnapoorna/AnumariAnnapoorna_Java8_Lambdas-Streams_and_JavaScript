@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>Registration Form</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.box
+{
+padding:20px;
+width:300px;
+border:1px solid;
+box-shadow:5px 5px;
+background-color:skyblue
+}
+body{
+text-align:center;
+}
+</style>
+<script language="javascript">
+function validate()
+{
+var msg="";
+var firstname=document.registration.fname.value;
+var fn= new RegExp("^[A-Za-z]{6,}");
+var birth=document.registration.dob.value;
+var mail=document.registration.email.value;
+var em= new RegExp("^[\\w]+@[\\w]+.com");
+var phoneno=document.registration.phno.value;
+var pn= new RegExp("^[0-9]{10}$");
+var university=document.registration.uname.value;
+var branch=document.registration.bname.value;
+var degree=document.registration.degree.value;
+var city=document.registration.city.value;
+var gen=document.registration.gender.value;
+var add=document.registration.address.value;
+if(!firstname.match(fn))
+{
+alert("enter the full name which must contain atleast 6 characters");
+return false;
+}
+if(birth=="")
+{
+alert("enter date of birth");
+return false;
+}
+if(!mail.match(em))
+{
+alert("email should be of abc@xyz.com pattern");
+return false;
+}
+if(!phoneno.match(pn))
+{
+alert("enter 10 digit phone number");
+return false;
+}
+if(university=="")
+{
+alert("enter university name");
+return false;
+}
+if(branch=="")
+{
+alert("enter branch name");
+return false;
+}
+if(degree=="")
+{
+alert("select degree");
+return false;
+}
+if(city=="")
+{
+alert("enter city");
+return false;
+}
+if(gen=="")
+{
+alert("select gender");
+return false;
+}
+if(add=="")
+{
+alert("enter address");
+return false;
+}
+document.registration.action="welcome.html";
+return true;
+}
+</script>
+</head>
+<body>
+<br>
+<center><div class="box">
+<b>REGISTRATION FORM</b>
+<form name="registration" onsubmit="validate()" method="post">
+<table>
+<tr>
+<td>FullName:</td>
+<td><input type="form" placeholder="FullName" name="fname"></td>
+</tr>
+<tr>
+<td>DateofBirth:</td>
+<td><input type="date" placeholder="DateofBirth" name="dob"></td>
+</tr>
+<tr>
+<td>Email Id:</td>
+<td><input type="form" placeholder="Email" name="email"></td>
+</tr>
+<tr>
+<td>PhoneNumber:</td>
+<td><input type="form" placeholder="PhoneNumber" name="phno"></td>
+</tr>
+<tr>
+<td>University Name:</td>
+<td><input type="form" placeholder="UniversityName" name="uname"></td>
+</tr>
+<tr>
+<td>Branch:</td>
+<td><input type="form" placeholder="branch" name="bname"></td>
+</tr>
+<tr>
+<td>Degree:</td>
+<td>
+<select name="degree">
+<option value="">select</option>
+<option value="B.Tech">B.Tech</option>
+<option value="B.E">B.E</option>
+<option value="M.Tech">M.Tech</option>
+<option value="B.B.A">B.B.A</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>City:</td>
+<td><input type="form" placeholder="city" name="city"></td>
+</tr>
+<tr>
+<td>Gender:</td>
+<td>
+<input type="radio" value="female" name="gender">Female
+<input type="radio" value="male" name="gender">Male
+</td>
+</tr>
+<tr>
+<td>Address:</td>
+<td><textarea rows="5" cols="20" name="address" placeholder="Address"></textarea></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" value="Submit"></td>
+</tr>
+</table>
+</form>
+</div>
+</center>
+</body>
